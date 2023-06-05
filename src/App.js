@@ -4,7 +4,7 @@ import React from 'react';
 
 const ReduxContext = React.createContext();
 
-//Implement the custom connect function
+//Implement the custom myConnect
 const myConnect = (mapStateToProps) => (Component) => {
   return (props) => {
     const {state, dispatch} = React.useContext(ReduxContext);
