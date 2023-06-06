@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Questions:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What Redux?
+Redux is a predictable state container for JavaScript apps. It helps developers manage the state of their apps in a predictable way. Redux uses a single immutable store to hold all the states in the app, and a reducer to take the previous states and actions to return a next state, making them predictable.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## What is Flux, difference with Redux?
+Flux is a design pattern for client-side web applications introduced by Facebook. It promotes a unidirectional data flow using a dispatcher, multiple stores, views (React components), and actions. Unlike Flux, Redux eliminates the dispatcher and uses pure reducer functions to handle state changes and control data flow. Redux also uses a single store instead of multiple stores.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## What is context API?
+Context API in React allows data to be passed through the component tree without having to manually pass props down at every level, effectively serving as global state for components. It can help mitigate the problem of prop drilling and state lifting. Prop drilling refers to the process of passing data from top of a React component tree to lower components through props. The process will become problematic if the tree goes deeper and nests in a more complicated way. State lifting involves moving state to a common ancestor component when multiples components need to share the same state, and excessive lifting could make the parent components complex and bloated.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What is the advantage and disadvantage of Redux?
+Pros: Predictable state management; Great debugging capability(RTK); Allows developers to customize how actions and dispatched and handled
+Cons: Might requires lots of boilerplate codes to set up and use; new concepts introduced in Redux might be complex to newcomers; Redux is usually beneficial in large projects where state management is much more complex
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## What is the advantage and disadvantage of Context API?
+Pros: Compared with Redux, Context API requires less boilerplate codes to set up and use; as it doesnt introduce many new concepts as Redux, context API is simpler to grasp for beginners.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Cons: Lack of customizable capabilities and more complex to debug than Redux; might not re-render sometimes when the states change in some edge cases; not ideal for high-frequency updates as mentioned specifically by the React team.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## How to connect a React component with Redux store
+To connect a React component with the Redux store, we can use the connect function from react-redux. We also need a mapStateToProps function to transform the Redux store state into props for the connected component to use. Then, we can use connect() to the component, connect it with props and the dispatch function for dispatching actions to the Redux store. Actions are handled by reducer functions, which determine how the state should change in response to an action.
