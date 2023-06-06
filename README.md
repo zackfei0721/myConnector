@@ -17,6 +17,9 @@ Context API in React allows data to be passed through the component tree without
 
 ## What is the advantage and disadvantage of Redux?
 Pros: Predictable state management; Great debugging capability(RTK); Allows developers to customize how actions and dispatched and handled
+
+
+
 Cons: Might requires lots of boilerplate codes to set up and use; new concepts introduced in Redux might be complex to newcomers; Redux is usually beneficial in large projects where state management is much more complex
 
 
